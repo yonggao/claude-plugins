@@ -1,0 +1,34 @@
+# HTML to PDF Skill - Version History
+
+## Version 1.0.0 (2025-10-23)
+
+### Initial Release
+
+**Features:**
+- HTML to PNG screenshot conversion
+- PNG to single-page PDF conversion
+- Auto-install dependencies (playwright, Pillow)
+- CSS animation disabling
+- Lazy content loading via scrolling
+- Zero-margin seamless output
+- Chinese/CJK character support
+
+**Scripts:**
+- `html_to_long_image.py` - Main converter script
+
+**Documentation:**
+- SKILL.md - Main skill definition
+- README.md - Installation and usage
+- QUICK_START.md - One-line quick reference
+- EXAMPLES.md - Real-world examples
+
+**Tested With:**
+- Python 3.12
+- Playwright 1.40+
+- Pillow 11.0+
+- macOS (arm64)
+
+**Known Limitations:**
+- Single-page output only (no multi-page A4)
+- Requires Chromium browser installation
+- Large HTML files (>5MB) may take longer to process
