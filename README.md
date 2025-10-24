@@ -350,32 +350,6 @@ claude-plugins/
 - Should handle dependencies gracefully
 - Should provide helpful error messages
 
-## MCP Servers
-
-This repository also documents MCP server configurations:
-
-### Feishu/Lark MCP Server
-
-Integrated in `~/.claude/settings.json`:
-
-```json
-{
-  "mcpServers": {
-    "lark-mcp": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@larksuiteoapi/lark-mcp",
-        "mcp",
-        "-a", "YOUR_APP_ID",
-        "-s", "YOUR_APP_SECRET",
-        "--oauth"
-      ]
-    }
-  }
-}
-```
-
 ## Contributing
 
 Contributions welcome! Please feel free to submit a Pull Request.
