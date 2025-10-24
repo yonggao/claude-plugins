@@ -6,11 +6,104 @@ A collection of custom plugins, skills, and configurations for [Claude Code](htt
 
 This repository contains personal customizations and extensions for Claude Code, including:
 
+- **Commands**: Custom slash commands for project-specific workflows
+- **Agents**: Specialized AI agents for different roles and tasks
 - **Skills**: Reusable capabilities that extend Claude Code's functionality
 - **Statusline**: Custom status line scripts for enhanced CLI experience
 - **Documentation**: Guides and examples for using these plugins
 
 ## Contents
+
+### Commands
+
+Custom slash commands for automated workflows and analysis tasks.
+
+#### 1. Team Analytics (`/team_analytics`)
+
+Analyze team's git commit history across all repositories for activity, performance, and working areas per developer.
+
+**Features:**
+- Repository discovery across subdirectories
+- Per-developer contribution analysis
+- Code change statistics and patterns
+- Cross-repository collaboration tracking
+- Team velocity and health metrics
+- Customizable time period analysis
+
+**Usage:**
+```bash
+/team_analytics "90 days ago"
+```
+
+#### 2. Agent Workflow (`/agent-workflow`)
+
+Manage and orchestrate multi-agent workflows for complex tasks.
+
+#### 3. CII Daily Report (`/cii_daily_report`)
+
+Generate comprehensive daily reports for Customer Intelligence & Insights.
+
+**Installation:**
+```bash
+# Copy commands to project .claude directory
+cp commands/*.md /path/to/your/project/.claude/commands/
+```
+
+### Agents
+
+Specialized AI agents with role-specific expertise and capabilities. These agents can be invoked to handle specific tasks with domain expertise.
+
+#### Engineering & Architecture
+
+- **Chief Architect** - High-level system design and technical strategy
+- **Senior Frontend Architect** - Frontend architecture and best practices
+- **Senior Backend Architect** - Backend system design and optimization
+- **DevOps Infrastructure Engineer** - Infrastructure, CI/CD, and deployment
+- **AI Engineer Expert** - AI/ML integration and optimization
+- **Energy AI Model Engineer** - Energy system modeling and optimization
+
+#### Product & Planning
+
+- **Project Manager** - Project planning, metrics analysis, and KPI tracking
+- **Business Analyst** - Requirements analysis and business process modeling
+- **Engineering Director** - Technical leadership and team management
+- **Data Analyst** - Data analysis, visualization, and insights
+
+#### Development & Quality
+
+- **QA Platform Manager** - Quality assurance and testing strategies
+- **Refactor Agent** - Code refactoring and optimization
+
+#### UI/UX
+
+- **UI/UX Master** - User interface and experience design
+
+#### Specification Workflow
+
+A complete specification development workflow with specialized agents:
+
+- **Spec Orchestrator** - Coordinates the specification workflow
+- **Spec Planner** - Plans specification structure and scope
+- **Spec Architect** - Designs technical architecture for specifications
+- **Spec Analyst** - Analyzes requirements and constraints
+- **Spec Developer** - Develops detailed specifications
+- **Spec Reviewer** - Reviews specifications for quality
+- **Spec Validator** - Validates specifications against requirements
+- **Spec Tester** - Tests specification implementations
+
+**Installation:**
+```bash
+# Copy agents to project .claude directory
+cp -r agents /path/to/your/project/.claude/
+```
+
+**Usage:**
+Within Claude Code, reference agents using the Task tool or by mentioning them in your requests:
+```
+> I need help with frontend architecture
+> Use the project-manager agent to break down this project
+> Let's use the spec-orchestrator to plan our API specification
+```
 
 ### Skills
 
@@ -120,12 +213,16 @@ chmod +x ~/.claude/statusline-metrics.sh
    cd claude-plugins
    ```
 
-2. **Install skills:**
+2. **Install components:**
    ```bash
-   # HTML to PDF skill
-   cp -r skills/html-to-pdf ~/.claude/skills/
+   # Commands (project-specific)
+   cp commands/*.md /path/to/your/project/.claude/commands/
 
-   # Markdown to PDF skill
+   # Agents (project-specific)
+   cp -r agents /path/to/your/project/.claude/
+
+   # Skills (global)
+   cp -r skills/html-to-pdf ~/.claude/skills/
    cp -r skills/markdown-to-pdf ~/.claude/skills/
 
    # Install dependencies
@@ -189,6 +286,19 @@ Simply ask Claude to use these skills:
 claude-plugins/
 ├── README.md                          # This file
 ├── LICENSE                            # MIT License
+├── commands/                          # Custom slash commands
+│   ├── team_analytics.md              # Git team analytics
+│   ├── agent-workflow.md              # Agent workflow orchestration
+│   └── cii_daily_report.md            # CII daily reporting
+├── agents/                            # Specialized AI agents
+│   ├── chief-architect.md             # System architecture
+│   ├── project-manager.md             # Project management
+│   ├── data-analyst.md                # Data analysis
+│   ├── frontend/                      # Frontend specialists
+│   ├── backend/                       # Backend specialists
+│   ├── spec-agents/                   # Specification workflow
+│   ├── ui-ux/                         # UI/UX design
+│   └── utility/                       # Utility agents
 ├── skills/                            # Claude Code skills
 │   ├── html-to-pdf/                   # HTML to PDF converter
 │   │   ├── SKILL.md                   # Skill definition
