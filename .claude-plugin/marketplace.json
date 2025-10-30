@@ -1,0 +1,34 @@
+{
+  "name": "claude-plugins",
+  "owner": {
+    "name": "Yong Gao",
+    "url": "https://github.com/yonggao/claude-plugins"
+  },
+  "plugins": [
+    {
+      "name": "html-to-pdf",
+      "source": "../skills/html-to-pdf",
+      "description": "Convert HTML files to PDF or PNG format with multiple rendering options. Supports multi-page PDFs, single-page long-image PDFs, background colors, and Chinese/CJK characters."
+    },
+    {
+      "name": "markdown-to-pdf",
+      "source": "../skills/markdown-to-pdf",
+      "description": "Convert Markdown files to professional PDF presentations using Marp. Supports multiple themes, code syntax highlighting, math equations, and Chinese/CJK characters."
+    },
+    {
+      "name": "team-analytics",
+      "source": "../commands",
+      "description": "Analyze team's git commit history across all repositories for activity, performance, and working areas per developer. Includes repository discovery, contribution analysis, and team velocity metrics."
+    },
+    {
+      "name": "specialized-agents",
+      "source": "../agents",
+      "description": "Collection of specialized AI agents for various roles including architects, engineers, project managers, analysts, and a complete specification workflow system with orchestrator, planner, analyst, developer, reviewer, validator, and tester agents."
+    },
+    {
+      "name": "custom-statusline",
+      "source": "../statusline",
+      "description": "Enhanced status line displaying model info, project/directory, git branch and status, token usage metrics, cost estimates, and system load with real-time updates."
+    }
+  ]
+}

@@ -205,7 +205,51 @@ chmod +x ~/.claude/statusline-metrics.sh
 - Node.js (for Marp skill)
 - Python 3.8+ (for conversion skills)
 
-### Quick Start
+### Method 1: Plugin Marketplace (Recommended)
+
+The easiest way to install these plugins is through Claude Code's built-in plugin system:
+
+1. **Add the marketplace:**
+   ```bash
+   # Using GitHub repository
+   /plugin marketplace add https://github.com/yonggao/claude-plugins
+
+   # Or using local path
+   /plugin marketplace add /path/to/claude-plugins
+   ```
+
+2. **Install plugins:**
+   ```bash
+   # Open interactive plugin manager
+   /plugin
+
+   # Or install specific plugins
+   /plugin install html-to-pdf@claude-plugins
+   /plugin install markdown-to-pdf@claude-plugins
+   /plugin install team-analytics@claude-plugins
+   /plugin install specialized-agents@claude-plugins
+   /plugin install custom-statusline@claude-plugins
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   # For HTML to PDF skill
+   pip install playwright pillow pypdf
+   playwright install chromium
+
+   # For Markdown to PDF skill
+   npm install -g @marp-team/marp-cli
+   ```
+
+4. **Verify installation:**
+   ```bash
+   # Check that commands are available
+   /help
+   ```
+
+### Method 2: Manual Installation
+
+If you prefer manual installation:
 
 1. **Clone this repository:**
    ```bash
@@ -247,6 +291,34 @@ chmod +x ~/.claude/statusline-metrics.sh
      }
    }
    ```
+
+### Team Setup
+
+For team-wide plugin deployment, add to your project's `.claude/settings.json`:
+
+```json
+{
+  "marketplaces": [
+    {
+      "path": "https://github.com/yonggao/claude-plugins"
+    }
+  ],
+  "plugins": [
+    {
+      "name": "html-to-pdf",
+      "marketplace": "claude-plugins"
+    },
+    {
+      "name": "markdown-to-pdf",
+      "marketplace": "claude-plugins"
+    },
+    {
+      "name": "specialized-agents",
+      "marketplace": "claude-plugins"
+    }
+  ]
+}
+```
 
 ## Usage Examples
 
