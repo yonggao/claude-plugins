@@ -134,7 +134,34 @@ python html_to_long_image.py input.html
 
 [Full Documentation](skills/html-to-pdf/SKILL.md)
 
-#### 2. Markdown to PDF (`skills/markdown-to-pdf/`)
+#### 2. Gemini Image Generator (`skills/gemini-image-generator/`)
+
+Generate images using Google Gemini models (2.0 Flash & 3.0 Pro).
+
+**Features:**
+- Single image generation with customizable prompts
+- Batch generation from text file prompts
+- Support for multiple Gemini model versions
+- Text rendering support (Pro model)
+- Up to 14 reference images for editing (Pro model)
+
+**Usage:**
+```bash
+# Single image
+python generate_image.py --prompt "A modern tech banner" --output "banner.png"
+
+# Batch generation
+python batch_generate.py --config prompts.md --output-dir output/
+```
+
+**Dependencies:**
+- google-genai
+- pillow
+- python-dotenv
+
+[Full Documentation](skills/gemini-image-generator/SKILL.md)
+
+#### 3. Markdown to PDF (`skills/markdown-to-pdf/`)
 
 Convert Markdown files to professional PDF presentations using Marp.
 

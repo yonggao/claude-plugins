@@ -29,6 +29,11 @@
       "name": "custom-statusline",
       "source": "./statusline",
       "description": "Enhanced status line displaying model info, project/directory, git branch and status, token usage metrics, cost estimates, and system load with real-time updates."
+    },
+    {
+      "name": "gemini-image-generator",
+      "source": "./skills/gemini-image-generator",
+      "description": "Generate images using Google Gemini models (2.0 Flash & 3.0 Pro). Create visuals, graphics, and artwork for marketing materials, social media, banners, and promotional content."
     }
   ]
 }
