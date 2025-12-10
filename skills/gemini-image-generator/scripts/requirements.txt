@@ -1,0 +1,4 @@
+# Gemini Image Generator Dependencies
+google-genai>=1.0.0
+pillow>=10.0.0
+python-dotenv>=1.0.0
